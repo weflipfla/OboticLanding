@@ -1,6 +1,6 @@
 /**
  * Obotix AI Employee Chat Widget
- * Embeddable med spa AI receptionist demo
+ * Embeddable AI receptionist demo for service businesses
  * Add to any page: <script src="obotix-chat-widget.js"></script>
  */
 (function () {
@@ -9,8 +9,8 @@
   // âââ CONFIG âââââââââââââââââââââââââââââââââââââââââââââââ
   const CONFIG = {
     botName: 'Ava',
-    businessName: 'Glow Med Spa',
-    tagline: 'AI Employee Demo',
+    businessName: 'Your Business',
+    tagline: 'Live AI Employee Demo by Obotix',
     primaryColor: '#8b5cf6',
     darkBg: '#0b0b14',
     typingDelay: 800,
@@ -389,18 +389,18 @@
 
     if (msg.includes('hour') || msg.includes('open') || msg.includes('close') || msg.includes('location') || msg.includes('address') || msg.includes('where')) {
       return {
-        text: `We're open:\n\n` +
+        text: `Here's an example of what your patients would see:\n\n` +
           `<strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM<br>` +
           `<strong>Saturday:</strong> 10:00 AM - 5:00 PM<br>` +
           `<strong>Sunday:</strong> Closed\n\n` +
-          `Located at <strong>123 Biscayne Blvd, Suite 200, Miami FL 33131</strong>\n\nWant to schedule a visit?`,
+          `<em style=\"color:rgba(139,92,246,0.8);font-size:12px;\">In your version, this shows your real address and hours.</em>\n\nWant to schedule a visit?`,
         quickReplies: ['Book appointment', 'View services', 'Get directions'],
       };
     }
 
     if (msg.includes('human') || msg.includes('person') || msg.includes('speak') || msg.includes('call') || msg.includes('phone')) {
       return {
-        text: `Of course! You can reach our team at <strong>(305) 555-0142</strong> during business hours, or I can have someone call you back. Would you like a callback?`,
+        text: `Of course! In your live version, I\u2019d transfer to your front desk or schedule a callback. For now, you can reach the Obotix team at <strong>info@obotix.co</strong>. Want to see more of what I can do?`,
         quickReplies: ['Yes, request callback', 'No thanks', 'Book online instead'],
       };
     }
@@ -537,7 +537,7 @@
     isOpen = !isOpen;
     if (isOpen && messages.length === 0) {
       sendBotMessage(
-        `Hey there! &#128075; I'm ${CONFIG.botName}, the AI receptionist at ${CONFIG.businessName}.\n\nI can help you book appointments, answer questions about our services, or connect you with our team. What can I do for you today?`,
+        `Hey there! &#128075; I'm ${CONFIG.botName}, an AI receptionist built by <strong>Obotix</strong>.\n\nThis is a live demo of what your med spa\'s AI employee would look and feel like. Try me out \u2014 I can book appointments, answer service questions, and handle inquiries 24/7.\n\nGo ahead, test me like a real patient would!`,
         ['View services', 'Book appointment', 'Hours & location', 'Pricing']
       );
       return;
